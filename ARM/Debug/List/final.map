@@ -1,0 +1,282 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.2.11706/W32 for ARM                26/Dec/2016  10:19:33
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  E:\micro controller\ARM\final project\Debug\Exe\final.out
+#    Map file     =  E:\micro controller\ARM\final project\Debug\List\final.map
+#    Command line =  
+#        "E:\micro controller\ARM\final project\Debug\Obj\delay.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\final.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\keypad.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\lcd.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\main.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\spi.o" "E:\micro
+#        controller\ARM\final project\Debug\Obj\uart.o" -o "E:\micro
+#        controller\ARM\final project\Debug\Exe\final.out" --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --map "E:\micro
+#        controller\ARM\final project\Debug\List\final.map" --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.5\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                       0x40
+  .intvec            ro code  0x00000000    0x40  vector_table_M.o [5]
+                            - 0x00000040    0x40
+
+"P1":                                     0x1498
+  .text              ro code  0x00000040   0x7b8  final.o [1]
+  .text              ro code  0x000007f8   0x320  lcd.o [1]
+  .text              ro code  0x00000b18   0x2c4  keypad.o [1]
+  .text              ro code  0x00000ddc   0x198  uart.o [1]
+  .text              ro code  0x00000f74    0xe0  spi.o [1]
+  .text              ro code  0x00001054     0xe  delay.o [1]
+  .rodata            const    0x00001062     0x2  lcd.o [1]
+  .rodata            const    0x00001064    0x60  final.o [1]
+  .rodata            const    0x000010c4    0x48  final.o [1]
+  .text              ro code  0x0000110c    0x40  zero_init3.o [5]
+  .rodata            const    0x0000114c    0x3c  final.o [1]
+  .rodata            const    0x00001188    0x38  final.o [1]
+  .rodata            const    0x000011c0    0x34  final.o [1]
+  .text              ro code  0x000011f4    0x2c  main.o [1]
+  .text              ro code  0x00001220    0x2c  copy_init3.o [5]
+  .rodata            const    0x0000124c    0x28  final.o [1]
+  .rodata            const    0x00001274    0x28  final.o [1]
+  .text              ro code  0x0000129c    0x28  data_init.o [5]
+  .rodata            const    0x000012c4    0x24  final.o [1]
+  .text              ro code  0x000012e8    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x0000130c    0x24  - Linker created -
+  .text              ro code  0x00001330     0x2  vector_table_M.o [5]
+  .rodata            const    0x00001334    0x20  final.o [1]
+  .rodata            const    0x00001354    0x1c  final.o [1]
+  .rodata            const    0x00001370    0x1c  final.o [1]
+  .text              ro code  0x0000138c    0x1a  cmain.o [5]
+  .text              ro code  0x000013a6     0x4  low_level_init.o [3]
+  .text              ro code  0x000013aa     0x4  exit.o [3]
+  .text              ro code  0x000013b0     0xa  cexit.o [5]
+  .text              ro code  0x000013bc    0x14  exit.o [6]
+  .rodata            const    0x000013d0    0x18  final.o [1]
+  .rodata            const    0x000013e8    0x18  final.o [1]
+  .rodata            const    0x00001400    0x14  final.o [1]
+  .rodata            const    0x00001414    0x14  final.o [1]
+  .rodata            const    0x00001428    0x14  final.o [1]
+  .rodata            const    0x0000143c    0x10  final.o [1]
+  .rodata            const    0x0000144c    0x10  final.o [1]
+  .rodata            const    0x0000145c    0x10  final.o [1]
+  .rodata            const    0x0000146c    0x10  final.o [1]
+  .rodata            const    0x0000147c    0x10  final.o [1]
+  .rodata            const    0x0000148c     0xc  final.o [1]
+  .rodata            const    0x00001498     0xc  final.o [1]
+  .text              ro code  0x000014a4     0xc  cstartup_M.o [5]
+  .rodata            const    0x000014b0     0x8  final.o [1]
+  .rodata            const    0x000014b8     0x8  final.o [1]
+  .rodata            const    0x000014c0     0x8  final.o [1]
+  .rodata            const    0x000014c8     0x8  final.o [1]
+  Initializer bytes  const    0x000014d0     0x8  <for P2-1>
+  .rodata            const    0x000014d8     0x0  zero_init3.o [5]
+  .rodata            const    0x000014d8     0x0  copy_init3.o [5]
+                            - 0x000014d8  0x1498
+
+"P2", part 1 of 3:                           0x8
+  P2-1                        0x20000000     0x8  <Init block>
+    .data            inited   0x20000000     0x4  final.o [1]
+    .data            inited   0x20000004     0x4  final.o [1]
+                            - 0x20000008     0x8
+
+"P2", part 2 of 3:                        0x1000
+  CSTACK                      0x20000008  0x1000  <Block>
+    CSTACK           uninit   0x20000008  0x1000  <Block tail>
+                            - 0x20001008  0x1000
+
+"P2", part 3 of 3:                         0x19c
+  .bss               zero     0x20001008    0xc8  final.o [1]
+  .bss               zero     0x200010d0    0xc8  final.o [1]
+  .bss               zero     0x20001198     0x4  final.o [1]
+  .bss               zero     0x2000119c     0x4  final.o [1]
+  .bss               zero     0x200011a0     0x1  final.o [1]
+  .bss               zero     0x200011a1     0x1  final.o [1]
+  .bss               zero     0x200011a2     0x1  final.o [1]
+  .bss               zero     0x200011a3     0x1  final.o [1]
+                            - 0x200011a4   0x19c
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x19c:
+          0x20001008  0x19c
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+          0x000014d0    0x8
+    1 destination range, total size 0x8:
+          0x20000000    0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+E:\micro controller\ARM\final project\Debug\Obj: [1]
+    delay.o                14
+    final.o             1 976      792      420
+    keypad.o              708
+    lcd.o                 800        2
+    main.o                 44
+    spi.o                 224
+    uart.o                408
+    -------------------------------------------
+    Total:              4 174      794      420
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [4]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                26
+    copy_init3.o           44
+    cstartup_M.o           12
+    data_init.o            40
+    vector_table_M.o       66
+    zero_init3.o           64
+    -------------------------------------------
+    Total:                262
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    4        4
+    Linker created                  36    4 096
+-----------------------------------------------
+    Grand Total:        4 502      834    4 516
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x0000130c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001330          --   Gb  - Linker created -
+?main                   0x0000138d         Code  Gb  cmain.o [5]
+CSTACK$$Base            0x20000008          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001008          --   Gb  - Linker created -
+Region$$Table$$Base     0x0000130c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001330          --   Gb  - Linker created -
+__cmain                 0x0000138d         Code  Gb  cmain.o [5]
+__exit                  0x000013bd   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3        0x00001221   0x2c  Code  Gb  copy_init3.o [5]
+__iar_data_init3        0x0000129d   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x000012e9         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x000014a5         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x0000110d   0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x000013a7    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000         Data  Gb  vector_table_M.o [5]
+_call_main              0x00001399         Code  Gb  cmain.o [5]
+_delay_ms               0x00000a8f   0x16  Code  Gb  lcd.o [1]
+_delay_us               0x00000aa5   0x10  Code  Gb  lcd.o [1]
+_exit                   0x000013b1         Code  Gb  cexit.o [5]
+_main                   0x000013a3         Code  Gb  cmain.o [5]
+add_password            0x000006a7   0x9c  Code  Gb  final.o [1]
+admin_control           0x000004dd  0x124  Code  Gb  final.o [1]
+admin_pass              0x20000004    0x4  Data  Gb  final.o [1]
+check_admin             0x00000601   0x24  Code  Gb  final.o [1]
+check_pass              0x000002b5   0x4a  Code  Gb  final.o [1]
+delay                   0x00001055    0xe  Code  Gb  delay.o [1]
+error_msg               0x000001e3   0xd2  Code  Gb  final.o [1]
+error_number            0x200011a0    0x1  Data  Gb  final.o [1]
+exit                    0x000013ab    0x4  Code  Gb  exit.o [3]
+get_pass                0x00000075   0x80  Code  Gb  final.o [1]
+get_time                0x000003b9   0x3c  Code  Gb  final.o [1]
+get_username            0x00000625    0xe  Code  Gb  final.o [1]
+hour                    0x200011a2    0x1  Data  Gb  final.o [1]
+intial                  0x00000041   0x34  Code  Gb  final.o [1]
+lcdCoordination         0x00000ad1   0x26  Code  Gb  lcd.o [1]
+lcdInit                 0x000007f9  0x18a  Code  Gb  lcd.o [1]
+lcdSendChar             0x000009bd   0x3a  Code  Gb  lcd.o [1]
+lcdSendCommand          0x00000983   0x3a  Code  Gb  lcd.o [1]
+lcdSendString           0x00000ab5   0x1c  Code  Gb  lcd.o [1]
+lcdWrite                0x000009f7   0x98  Code  Gb  lcd.o [1]
+lcd_user                0x0000066d   0x3a  Code  Gb  final.o [1]
+main                    0x000011f5   0x2c  Code  Gb  main.o [1]
+mint                    0x200011a3    0x1  Data  Gb  final.o [1]
+pass                    0x2000119c    0x4  Data  Gb  final.o [1]
+pass_bits               0x20001198    0x4  Data  Gb  final.o [1]
+pass_index              0x200011a1    0x1  Data  Gb  final.o [1]
+passwords               0x20001008   0xc8  Data  Gb  final.o [1]
+print_time              0x000003f5   0x9c  Code  Gb  final.o [1]
+recive_pass             0x0000016f   0x74  Code  Gb  final.o [1]
+u8KeypadRead            0x00000c17  0x198  Code  Gb  keypad.o [1]
+u8Recivepassword        0x000004bf   0x1e  Code  Gb  final.o [1]
+u8UartRecive            0x00000edb   0x1c  Code  Gb  uart.o [1]
+u8UartRecivepass        0x00000491   0x2e  Code  Gb  final.o [1]
+uart_user               0x00000633   0x3a  Code  Gb  final.o [1]
+users                   0x200010d0   0xc8  Data  Gb  final.o [1]
+users_bytes             0x20000000    0x4  Data  Gb  final.o [1]
+vKeypadInit             0x00000b19   0xfe  Code  Gb  keypad.o [1]
+vSpiInit                0x00000f75   0x9c  Code  Gb  spi.o [1]
+vSpiTransive            0x00001011   0x12  Code  Gb  spi.o [1]
+vTransString            0x00000f3d   0x22  Code  Gb  uart.o [1]
+vUartDelete             0x00000f5f   0x16  Code  Gb  uart.o [1]
+vUartInit               0x00000ddd   0xfe  Code  Gb  uart.o [1]
+vUartTrans              0x00000ef7   0x10  Code  Gb  uart.o [1]
+welcome_msg             0x000000f5   0x7a  Code  Gb  final.o [1]
+write_pass              0x000002ff   0xba  Code  Gb  final.o [1]
+
+
+[1] = E:\micro controller\ARM\final project\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  4 502 bytes of readonly  code memory
+    834 bytes of readonly  data memory
+  4 516 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
